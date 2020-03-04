@@ -1,141 +1,243 @@
-{%  extends 'accounts/main.html' %}
+{% extends 'accounts/main.html' %}
 
 {% block content %}
-        <!-- banner part start-->
-    <section class="banner_part">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-xl-6">
-                    <div class="banner_text">
-                        <div class="banner_text_iner">
-                            <h5>Every child yearns to learn</h5>
-                            <h1>Making Your Childs
-                                World Better</h1>
-                            <p>Replenish seasons may male hath fruit beast were seas saw you arrie said man beast whales
-                                his void unto last session for bite. Set have great you'll male grass yielding yielding
-                                man</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- banner part start-->
+    {% load static %}
 
-    <!-- feature_part start-->
-    <section class="feature_part">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-xl-3 align-self-center">
-                    <div class="single_feature_text ">
-                        <h2>Awesome <br> Feature</h2>
-                        <p>Set have great you male grass yielding an yielding first their you're
-                            have called the abundantly fruit were man </p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="single_feature">
-                        <div class="single_feature_part">
-                            <span class="single_feature_icon"><i class="ti-layers"></i></span>
-                            <h4>Partager</h4>
-                            <p>Set have great you male grasses yielding yielding first their to
-                                called deep abundantly Set have great you male</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="single_feature">
-                        <div class="single_feature_part">
-                            <span class="single_feature_icon"><i class="ti-new-window"></i></span>
-                            <h4>Consulter</h4>
-                            <p>Set have great you male grasses yielding yielding first their to called
-                                deep abundantly Set have great you male</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="single_feature">
-                        <div class="single_feature_part single_feature_part_2">
-                            <span class="single_service_icon style_icon"><i class="ti-light-bulb"></i></span>
-                            <h4>Telecharger</h4>
-                            <p>Set have great you male grasses yielding yielding first their to called deep
-                                abundantly Set have great you male</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- upcoming_event part start-->
 
-    <!--::blog_part start::-->
-    <section class="blog_part section_padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-5">
-                    <div class="section_tittle text-center">
-                        <p>Our Blog</p>
-                        <h2>Students Blog</h2>
+
+    <!--==========================
+       Intro Section
+     ============================-->
+
+    <section id="intro" class="clearfix" style="background: #f5f8fd url("/img/intro-bg.jpg") center top no-repeat">
+    <div class="container d-flex h-100">
+        <div class="row justify-content-center align-self-center">
+            <div class="col-md-6 intro-info order-md-first order-last">
+                <h2>Le partage prend <br>tout <span>son sens</span></h2>
+                <div class="row">
+                    <div style="padding-right: 10px;padding-left:10px ;">
+
+                        <a href="{% url 'user_login' %}" class="btn-get-started scrollto">Se Connecter</a>
                     </div>
+                    <div style="padding-left:10px;">
+                        <a href="{% url 'choice_register' %}" class="btn-get-started scrollto">S'inscrire</a>
+                    </div>
+
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-6 col-lg-4 col-xl-4">
-                    <div class="single-home-blog">
-                        <div class="card">
-                            <img src="img/blog/blog_1.png" class="card-img-top" alt="blog">
-                            <div class="card-body">
-                                <a href="#" class="btn_4">Design</a>
-                                <a href="blog.html">
-                                    <h5 class="card-title">Dry beginning sea over tree</h5>
-                                </a>
-                                <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
-                                <ul>
-                                    <li> <span class="ti-comments"></span>2 Comments</li>
-                                    <li> <span class="ti-heart"></span>2k Like</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-4">
-                    <div class="single-home-blog">
-                        <div class="card">
-                            <img src="img/blog/blog_2.png" class="card-img-top" alt="blog">
-                            <div class="card-body">
-                                <a href="#" class="btn_4">Developing</a>
-                                <a href="blog.html">
-                                    <h5 class="card-title">All beginning air two likeness</h5>
-                                </a>
-                                <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
-                                <ul>
-                                    <li> <span class="ti-comments"></span>2 Comments</li>
-                                    <li> <span class="ti-heart"></span>2k Like</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-4">
-                    <div class="single-home-blog">
-                        <div class="card">
-                            <img src="img/blog/blog_3.png" class="card-img-top" alt="blog">
-                            <div class="card-body">
-                                <a href="#" class="btn_4">Design</a>
-                                <a href="blog.html">
-                                    <h5 class="card-title">Form day seasons sea hand</h5>
-                                </a>
-                                <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
-                                <ul>
-                                    <li> <span class="ti-comments"></span>2 Comments</li>
-                                    <li> <span class="ti-heart"></span>2k Like</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+            <div class="col-md-6 intro-img order-md-last order-first">
+                <img src="{% static 'accounts/img/polydoc.png' %} " alt="" class="img-fluid">
             </div>
         </div>
-    </section>
-    <!--::blog_part end::-->
+
+    </div>
+    </section><!-- #intro -->
+
+    <main id="main">
+
+        <!--==========================
+          About Us Section
+        ============================-->
+
+
+        <!--==========================
+          Services Section
+        ============================-->
+
+        <section id="services" class="section-bg">
+            <div class="container">
+
+                <header class="section-header">
+                    <h3>Awesome Features</h3>
+                    <p>Partage de documents pour les travaux pratiques et support de cours,
+                        gestion de groupes d’élèves(par classe),consultation de document,discussion
+                        dans un forum(avec choix de le désactiver) … sont autant de possibilités offertes
+                        par notre solution.</p>
+                </header>
+
+                <div class="row">
+
+                    <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
+                        <div class="box">
+                            <div class="icon" style="background: #fceef3;"><i class="ion-ios-analytics-outline"
+                                                                              style="color: #ff689b;"></i></div>
+                            <h4 class="title"><a href="">Partager</a></h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                excepturi sint occaecati cupiditate non provident</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
+                        <div class="box">
+                            <div class="icon" style="background: #fff0da;"><i class="ion-ios-bookmarks-outline"
+                                                                              style="color: #e98e06;"></i></div>
+                            <h4 class="title"><a href="">Consulter</a></h4>
+                            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                aliquip ex ea commodo consequat tarad limino ata</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+                        <div class="box">
+                            <div class="icon" style="background: #e6fdfc;"><i class="ion-ios-paper-outline"
+                                                                              style="color: #3fcdc7;"></i></div>
+                            <h4 class="title"><a href="">Telecharger</a></h4>
+                            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                dolore eu fugiat nulla pariatur</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+                        <div class="box">
+                            <div class="icon" style="background: #eafde7;"><i class="ion-ios-speedometer-outline"
+                                                                              style="color:#41cf2e;"></i></div>
+                            <h4 class="title"><a href="">Modifier</a></h4>
+                            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                officia deserunt mollit anim id est laborum</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
+                        <div class="box">
+                            <div class="icon" style="background: #e1eeff;"><i class="ion-ios-world-outline"
+                                                                              style="color: #2282ff;"></i></div>
+                            <h4 class="title"><a href="">Discuter</a></h4>
+                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                                blanditiis praesentium voluptatum deleniti atque</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
+                        <div class="box">
+                            <div class="icon" style="background: #ecebff;"><i class="ion-ios-clock-outline"
+                                                                              style="color: #8660fe;"></i></div>
+                            <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
+                            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+                                tempore, cum soluta nobis est eligendi</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- #services -->
+
+        <!--==========================
+          Why Us Section
+        ============================-->
+        <section id="why-us" class="wow fadeIn">
+            <div class="container-fluid">
+
+                <header class="section-header">
+                    <h3>Pourquoi Polydoc ?</h3>
+                    <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant
+                        vituperatoribus.</p>
+                </header>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="why-us-img">
+                            <img src="{% static  'accounts/img/sokhna_si.png' %}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="why-us-content">
+                            <p>En milieu universitaire, la nécessité d’échanger entre les professeurs et leurs élèves
+                                des documents est une réalité du quotidien. </p>
+                            <p>
+                                L’utilisation d’un extranet est donc un besoin vital auquel notre plateforme et ses
+                                fonctionnalites repondront avec brio.
+                                Ainsi cettee plateforme de géstion electronique des documents(GED) permettra de rendre
+                                plus facile le partage de document entre eleve et prof.
+                            </p>
+
+                            <div class="features wow bounceInUp clearfix">
+                                <i class="fa fa-diamond" style="color: #f058dc;"></i>
+                                <h4>Corporis dolorem</h4>
+                                <p>Commodi quia voluptatum. Est cupiditate voluptas quaerat officiis ex alias
+                                    dignissimos et ipsum. Soluta at enim modi ut incidunt dolor et.</p>
+                            </div>
+
+                            <div class="features wow bounceInUp clearfix">
+                                <i class="fa fa-object-group" style="color: #ffb774;"></i>
+                                <h4>Eum ut aspernatur</h4>
+                                <p>Molestias eius rerum iusto voluptas et ab cupiditate aut enim. Assumenda animi
+                                    occaecati. Quo dolore fuga quasi autem aliquid ipsum odit. Perferendis doloremque
+                                    iure nulla aut.</p>
+                            </div>
+
+                            <div class="features wow bounceInUp clearfix">
+                                <i class="fa fa-language" style="color: #589af1;"></i>
+                                <h4>Voluptates dolores</h4>
+                                <p>Voluptates nihil et quis omnis et eaque omnis sint aut. Ducimus dolorum aspernatur.
+                                    Totam dolores ut enim ullam voluptas distinctio aut.</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!--==========================
+          Team Section
+        ============================-->
+        <section id="team" class="section-bg">
+            <div class="container">
+                <div class="section-header">
+                    <h3>Team</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                </div>
+
+                <div class="row">
+
+
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="member">
+                            <img src="{% static 'accounts/img/team-1.jpg' %}" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Ibrahima Birane Faye</h4>
+                                    <span>Product Manager</span>
+                                    <div class="social">
+                                        <a href=""><i class="fa fa-twitter"></i></a>
+                                        <a href=""><i class="fa fa-facebook"></i></a>
+                                        <a href=""><i class="fa fa-google-plus"></i></a>
+                                        <a href=""><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="member">
+                            <img src="{% static 'accounts/img/team-4.jpg' %}" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Faty Gueye</h4>
+                                    <span>CTO</span>
+                                    <div class="social">
+                                        <a href=""><i class="fa fa-twitter"></i></a>
+                                        <a href=""><i class="fa fa-facebook"></i></a>
+                                        <a href=""><i class="fa fa-google-plus"></i></a>
+                                        <a href=""><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+        </section><!-- #team -->
+
+    </main>
+
+
 {% endblock %}

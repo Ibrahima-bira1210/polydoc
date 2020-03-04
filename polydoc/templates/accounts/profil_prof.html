@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <h1>Edit Profile prof</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-3">
+                <div class="text-center">
+                    <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+                    <h6>Upload a different photo...</h6>
+                    <input type="file" class="form-control" name="photo">
+                </div>
+            </div>
+
+            <!-- edit form column -->
+            <div class="col-md-9 personal-info">
+                <div class="alert alert-info alert-dismissable">
+                    <a class="panel-close close" data-dismiss="alert">×</a>
+                    <i class="fa fa-coffee"></i><strong>.alert</strong>.Avant d'utiliser polydoc veuilez editer votre
+                    profil
+                </div>
+                <h3>Personal info</h3>
+
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="col-lg-5 control-label">First name:</label>
+                        <div class="col-lg-10">
+                            <input class="form-control" required type="text" value="Jane">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-5 control-label">Last name:</label>
+                        <div class="col-lg-10">
+                            <input class="form-control" required type="text" value="Bishop">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Email:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" value="janesemail@gmail.com">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label class="col-lg-10 control-label" for="dept">Departement</label>
+                        <select class="browser-default custom-select" data-live-search="true" id="dept" multiple
+                                name="dept">
+                            <option selected>Open this select departement</option>
+                            <option value="1">Genie Civil</option>
+                            <option value="2">Genie Electromecanique</option>
+                            <option value="3">Genie Informatique et Telecommunication</option>
+                            <option value="4">Filiere Aeronautique</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="col-lg-10 control-label " for="classe" multiple>Matiere Enseigne </label>
+                        <select class="browser-default selectpicker custom-select" data-live-search="true" id="classe"
+                                multiple>
+                            <option selected>Open this select Classe</option>
+                            <option value="1">TC1</option>
+                            <option value="2">TC2</option>
+                            <option value="3">DIC1</option>
+                            <option value="2">DIC2</option>
+                            <option value="3">DIC3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Username:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" value="janeuser">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="bio">Bio</label>
+                    <textarea name="bio" class="form-control" rows="2" cols="1" id="bio"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        <input type="button" class="btn btn-primary" value="Sauvegarder les modifications">
+
+                    </div>
+                </div>
+    </form>
+</div>
+
+
+</body>
+</html>
+
+
+def upload(request):
+matiere = Matiere.objects.all()
+if request.method == 'POST':
+title = request.POST['titre']
+matiere = request.POST['matiere']
+author = request.POST['author']
+cover = request.FILES['cover']
+pdf = request.FILES['pdf']
+matiere_e = Matiere.objects.get(libelle=matiere)
+doc = Document()
+doc.title =title
+doc.matiere = matiere_e
+doc.author = author
+doc.cover = cover
+doc.pdf = pdf
+doc.save()
+return redirect('ged')
+
+else:
+contex = {
+'matiere':matiere
+}
+return render(request, 'ged/upload.html', contex)

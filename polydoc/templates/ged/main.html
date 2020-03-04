@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Rapid Bootstrap Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700"
+          rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="{% static 'ged/css/bootstrap.min.css' %} " rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="{% static 'ged/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'ged/css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'ged/css/ionicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'ged/css/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'ged/css/lightbox.min.css' %}" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'ged/css/style.css' %}" rel="stylesheet">
+    {% include 'ged/main_css.html' %}
+
+</head>
+
+<body>
+
+<!-- include navbar -->
+  {%  include 'ged/navbar.html' %}
+  <!-- include block content -->
+  {%  block content %}
+
+  {% endblock %}
+  <!-- end block content -->
+  <!-- include footer -->
+  {%  include 'ged/footer.html' %}
+
+</body>
+<!-- JavaScript Libraries -->
+<script src="{% static 'ged/js/jquery.min.js' %}"></script>
+<script src="{% static 'ged/js/jquery-migrate.min.js' %}"></script>
+<script src="{% static 'ged/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'ged/js/easing.min.js' %}"></script>
+<script src="{% static 'ged/js/mobile-nav.js' %}"></script>
+<script src="{% static 'ged/js/wow.min.js' %}"></script>
+<script src="{% static 'ged/js/waypoints.min.js' %}"></script>
+<script src="{% static 'ged/js/counterup.min.js' %}"></script>
+<script src="{% static 'ged/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'ged/js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'ged/js/lightbox.min.js' %}"></script>
+<!-- Contact Form JavaScript File -->
+<script src="{% static 'ged/js/contactform.js' %}"></script>
+
+<!-- Template Main Javascript File -->
+<script src="{% static 'ged/js/main.js' %}"></script>
+
+
+{% include 'ged/main_js.html' %}
+</body>
+</html>

@@ -1,65 +1,103 @@
-from django.db import models
 from django.contrib.auth.models import User
+from django.db import models
 
 
 # Create your models here.
 
 
-
-class Departement(models.Model):
-    dept = (
-        ('TR', 'Tronc Commun'),
-        ('GC', 'Génie Civil'),
-        ('GEM', 'Génie Electromécanique'),
-        ('FA', 'Filière Aréonautique'),
-        ('GIT', 'Génie Informatique et Télécommunications'),
-    )
-    id_dept = models.AutoField(primary_key=True)
-    nom_dept = models.CharField(max_length=3, choices=dept)
-
+# ************************table class********************************
 
 class Classe(models.Model):
     id_classe = models.AutoField(primary_key=True)
     classe = (
-        ('tc1', 'TC1'),
-        ('tc2', 'TC2'),
-        ('dic1', 'DIC1'),
-        ('dic2', 'DIC2'),
-        ('dic3', 'DIC3'),
+        ('TC1', 'TC1'),
+        ('TC2', 'TC2'),
+        ('DIC1-GC', 'DIC1-GC'),
+        ('DIC1-GEM', 'DIC1-GEM'),
+        ('DIC1-GIT', 'DIC1-GIT'),
+        ('DIC1-AERO', 'DIC1-AERO'),
+        ('DIC2-GC', 'DIC2-GC'),
+        ('DIC2-GEM', 'DIC2-GEM'),
+        ('DIC2-GIT', 'DIC2-GIT'),
+        ('DIC2-AERO', 'DIC2-AERO'),
+        ('DIC3-GC', 'DIC3-GC'),
+        ('DIC3-GEM', 'DIC3-GEM'),
+        ('DIC3-GIT', 'DIC3-GIT'),
+        ('DIC3-AERO', 'DIC3-AERO'),
     )
-    nom_classe = models.CharField(max_length=4, choices=classe)
-    id_dept = models.ForeignKey(Departement, on_delete=models.CASCADE)
+    nom_classe = models.CharField(max_length=10, choices=classe)
+
+    def __str__(self):
+        p = self.nom_classe
+        return p
 
 
-class Prof(models.Model):
-    mat_ens = models.CharField(max_length=200)
-    prof_user = models.ForeignKey(User, on_delete=models.CASCADE)
-
-
-class Matiere(models.Model):
-    id_matiere = models.AutoField(primary_key=True)
-    libelle = models.CharField(max_length=200)
-    id_prof = models.ForeignKey(Prof, on_delete=models.CASCADE)
-
-
-class Class_mat(models.Model):
-    id_classe = models.ForeignKey(Classe, on_delete=models.CASCADE)
-    id_matiere = models.ForeignKey(Matiere, on_delete=models.CASCADE)
-    num_semestre = models.CharField(max_length=20)
-
+# **********************table eleve*******************************
 
 class Eleve(models.Model):
     eleve_user = models.ForeignKey(User, on_delete=models.CASCADE)
     class_eleve = models.ForeignKey(Classe, on_delete=models.CASCADE)
+    bio = models.TextField(max_length=100, default='ma bio')
+    photo_e = models.ImageField(upload_to='upload', default=None)
 
     def __str__(self):
-        return self.eleve_user.username
+        return self.eleve_user
 
 
-class Profil(models.Model):
-    bio = models.TextField()
-    photo = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
-    profil_user =  models.OneToOneField(User, on_delete = models.CASCADE)
+# **************************table Matiere********************************
+
+class Matiere(models.Model):
+    id_matiere = models.AutoField(primary_key=True)
+    libelle = models.CharField(max_length=200)
+    id_classe = models.ForeignKey(Classe, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
-        return self.profil_user.username
+        return self.libelle
+
+
+# **************************table prof**************************
+
+class Prof(models.Model):
+    mat_ens = models.CharField(max_length=200)
+    prof_user = models.ForeignKey(User, on_delete=models.CASCADE)
+    bio = models.TextField(max_length=100, default='ma bio')
+    photo_p = models.ImageField(upload_to='upload', default=None)
+
+    def __str__(self):
+        return self.prof_user
+
+
+class Enseigner(models.Model):
+    id_prof = models.ForeignKey(Prof, on_delete=models.CASCADE, default=1)
+    id_matiere = models.ForeignKey(Matiere, on_delete=models.CASCADE, default=1)
+
+
+class Document(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=100)
+    pdf = models.FileField(upload_to='document/pdfs')
+    matiere_doc = models.ForeignKey(Matiere, on_delete=models.CASCADE, default=1)
+    ext = (
+        ('ppt', 'ppt'),
+        ('docx', 'docx'),
+        ('pdf', 'pdf'),
+        ('zip', 'zip'),
+        ('xls', 'xls'),
+        ('autre', 'autre')
+    )
+    extension_doc = models.CharField(max_length=10, choices=ext, default='autre')
+    choix = (
+        ('Cours', 'cours'),
+        ('Tp', 'Tp'),
+        ('Td', 'Td')
+    )
+    type_doc = models.CharField(max_length=10, choices=choix, default='Cours')
+
+    def __str__(self):
+        return self.title
+
+    def delete(self, *args, **kwargs):
+        self.pdf.delete()
+        super().delete(*args, **kwargs)
+
+# ****************************************************

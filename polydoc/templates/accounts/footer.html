@@ -1,68 +1,114 @@
-    <!--*************************************************** footer part start ******************************************************-->
-    {% load static %}
-    <footer class="footer-area">
+<!--==========================
+   Footer
+ ============================-->
+<footer id="footer" class="section-bg">
+    <div class="footer-top">
         <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-sm-6 col-md-4 col-xl-3">
-                    <div class="single-footer-widget footer_1">
-                        <a href="index.html"> <img src="{% static 'img/logo.png' %}" alt=""> </a>
-                        <p>But when shot real her. Chamber her one visite removal six
-                            sending himself boys scot exquisite existend an </p>
-                        <p>But when shot real her hamber her </p>
+
+            <div class="row">
+
+                <div class="col-lg-6">
+
+                    <div class="row">
+
+                        <div class="col-sm-6">
+
+                            <div class="footer-info">
+                                <h3>Polydoc</h3>
+                                <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa
+                                    magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.
+                                    Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc
+                                    congue.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="footer-links">
+                                <h4>Useful Links</h4>
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="">site de l'ept</a></li>
+
+                                </ul>
+                            </div>
+
+                            <div class="footer-links">
+                                <h4>Contact Us</h4>
+                                <p>
+                                    16 H2 <br>
+                                    Campus EPT <br>
+                                    Thies,Senegal<br>
+                                    <strong>Phone:</strong> +221 77 410 83 47<br>
+                                    <strong>Email:</strong> biranbirane1210@gmail.com<br>
+                                </p>
+                            </div>
+
+                            <div class="social-links">
+                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                                <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                            </div>
+
+                        </div>
+
                     </div>
+
                 </div>
-                <div class="col-sm-6 col-md-4 col-xl-4">
-                    <div class="single-footer-widget footer_2">
-                        <h4>Newsletter</h4>
-                        <p>Stay updated with our latest trends Seed heaven so said place winged over given forth fruit.
-                        </p>
-                        <form action="#">
+
+                <div class="col-lg-6">
+
+                    <div class="form">
+
+                        <h4>Send us a message</h4>
+                        <p>Eos ipsa est voluptates. Nostrum nam libero ipsa vero. Debitis quasi sit eaque numquam
+                            similique commodi harum aut temporibus.</p>
+                        <form action="" method="post" role="form" class="contactForm">
                             <div class="form-group">
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder='Enter email address'
-                                        onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Enter email address'">
-                                    <div class="input-group-append">
-                                        <button class="btn btn_1" type="button"><i class="ti-angle-right"></i></button>
-                                    </div>
-                                </div>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                                       data-rule="minlen:4" data-msg="Please enter at least 4 chars"/>
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" id="email"
+                                       placeholder="Your Email" data-rule="email"
+                                       data-msg="Please enter a valid email"/>
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="subject" id="subject"
+                                       placeholder="Subject" data-rule="minlen:4"
+                                       data-msg="Please enter at least 8 chars of subject"/>
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" rows="5" data-rule="required"
+                                          data-msg="Please write something for us" placeholder="Message"></textarea>
+                                <div class="validation"></div>
+                            </div>
+
+                            <div id="sendmessage">Your message has been sent. Thank you!</div>
+                            <div id="errormessage"></div>
+
+                            <div class="text-center">
+                                <button type="submit" title="Send Message">Send Message</button>
                             </div>
                         </form>
-                        <div class="social_icon">
-                            <a href="#"> <i class="ti-facebook"></i> </a>
-                            <a href="#"> <i class="ti-twitter-alt"></i> </a>
-                            <a href="#"> <i class="ti-instagram"></i> </a>
-                            <a href="#"> <i class="ti-skype"></i> </a>
-                        </div>
                     </div>
+
                 </div>
-                <div class="col-xl-3 col-sm-6 col-md-4">
-                    <div class="single-footer-widget footer_2">
-                        <h4>Contact us</h4>
-                        <div class="contact_info">
-                            <p><span> Address :</span> Hath of it fly signs bear be one blessed after </p>
-                            <p><span> Phone :</span> +2 36 265 (8060)</p>
-                            <p><span> Email : </span>info@colorlib.com </p>
-                        </div>
-                    </div>
-                </div>
+
+
             </div>
 
         </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="copyright_part_text text-center">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    </div>
+
+    <div class="container">
+        <div class="copyright">
+            &copy; Copyright <strong>Polydoc</strong>. All Rights Reserved
         </div>
-    </footer>
-<!--***************************************************** footer part end *******************************************-->
+
+    </div>
+</footer><!-- #footer -->

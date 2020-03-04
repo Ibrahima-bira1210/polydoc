@@ -1,68 +1,69 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="fr">
+<html lang="en">
 <head>
-        <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Polydoc</title>
-    <link rel="icon" href="{% static 'img/favicon.png' %}">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
-    <!-- animate CSS -->
-    <link rel="stylesheet" href="{% static "css/animate.css" %}">
-    <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}">
-    <!-- themify CSS -->
-    <link rel="stylesheet" href="{% static "css/themify-icons.css"%}">
-    <!-- flaticon CSS -->
-    <link rel="stylesheet" href="{% static "css/flaticon.css"%}">
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" href="{% static "css/magnific-popup.css"%}">
-    <!-- swiper CSS -->
-    <link rel="stylesheet" href="{% static "css/slick.css"%}">
-    <!-- style CSS -->
-    <link rel="stylesheet" href="{% static "css/style.css"%}">
-    <!-- register CSS-->
-    <link rel="stylesheet" href={% static "css/register.css" %}">
+    <title>Rapid Bootstrap Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700"
+          rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="{% static 'accounts/css/bootstrap.min.css' %} " rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="{% static 'accounts/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'accounts/css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'accounts/css/ionicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'accounts/css/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'accounts/css/lightbox.min.css' %}" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'accounts/css/style.css' %}" rel="stylesheet">
+    {% include 'accounts/main_css.html' %}
+
 </head>
+
 <body>
-    <!-- include navbar -->
-    {%  include 'accounts/navbar.html' %}
-    <!-- include block content -->
-    {%  block content %}
 
-    {% endblock %}
-    <!-- end block content -->
-    <!-- include footer -->
-    {%  include 'accounts/footer.html' %}
+<!-- include navbar -->
+  {%  include 'accounts/navbar.html' %}
+  <!-- include block content -->
+  {%  block content %}
+
+  {% endblock %}
+  <!-- end block content -->
+  <!-- include footer -->
+  {%  include 'accounts/footer.html' %}
+
+</body>
+<!-- JavaScript Libraries -->
+<script src="{% static 'accounts/js/jquery.min.js' %}"></script>
+<script src="{% static 'accounts/js/jquery-migrate.min.js' %}"></script>
+<script src="{% static 'accounts/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'accounts/js/easing.min.js' %}"></script>
+<script src="{% static 'accounts/js/mobile-nav.js' %}"></script>
+<script src="{% static 'accounts/js/wow.min.js' %}"></script>
+<script src="{% static 'accounts/js/waypoints.min.js' %}"></script>
+<script src="{% static 'accounts/js/counterup.min.js' %}"></script>
+<script src="{% static 'accounts/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'accounts/js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'accounts/js/lightbox.min.js' %}"></script>
+<!-- Contact Form JavaScript File -->
+<script src="{% static 'accounts/js/contactform.js' %}"></script>
+
+<!-- Template Main Javascript File -->
+<script src="{% static 'accounts/js/main.js' %}"></script>
 
 
-  <!-- jquery plugins here-->
-   <!-- jquery plugins here-->
-    <!-- jquery -->
-    <script src="{% static "js/jquery-1.12.1.min.js"></script>
-    <!-- popper js -->
-    <script src="js/popper.min.js"></script>
-    <!-- bootstrap js -->
-    <script src="{% static "js/bootstrap.min.js" %}"></script>
-    <!-- easing js -->
-    <script src="{% static "js/jquery.magnific-popup.js " %}"></script>
-    <!-- swiper js -->
-    <script src="{% static "js/swiper.min.js" %}"></script>
-    <!-- swiper js -->
-    <script src="{% static "js/masonry.pkgd.js" %}"></script>
-    <!-- particles js -->
-    <script src="{% static "js/owl.carousel.min.js" %}"></script>
-    <script src="{% static "js/jquery.nice-select.min.js"%}"></script>
-    <!-- swiper js -->
-    <script src="{% static "js/slick.min.js"%}"></script>
-    <script src="{% static "js/jquery.counterup.min.js"%}"></script>
-    <script src="{% static "js/waypoints.min.js"%}"></script>
-    <!-- custom js -->
-    <script src="{% static "js/custom.js"%}"></script>
+{% include 'accounts/main_js.html' %}
 </body>
 </html>
